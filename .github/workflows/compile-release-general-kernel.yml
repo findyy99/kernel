@@ -18,7 +18,7 @@ on:
         options:
           - unifreq
           - codesnas
-          - findyy
+          - findyy99
       kernel_version:
         description: "Select kernel version"
         required: false
