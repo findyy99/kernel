@@ -17,6 +17,8 @@ on:
         type: choice
         options:
           - unifreq/linux-5.10.y-rk35xx
+          - codesnas/linux-5.10.y-rk35xx
+          - armbian/linux-rockchip@rk-6.1-rkr5
       kernel_version:
         description: "Select kernel version"
         required: false
@@ -24,6 +26,7 @@ on:
         type: choice
         options:
           - 5.10.y
+          - 6.1.y
       kernel_auto:
         description: "Auto use the latest kernel"
         required: false
@@ -44,6 +47,11 @@ on:
         type: choice
         options:
           - gcc
+          - gcc-11.3
+          - gcc-12.2
+          - gcc-12.3
+          - gcc-13.2
+          - gcc-13.3
       compress_format:
         description: "Set the initrd compression format"
         required: false
@@ -104,7 +112,7 @@ jobs:
           sudo rm -f /swapfile /mnt/swapfile
           sudo -E apt-get -y update
           sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
-          sudo -E apt-get -y install $(curl -fsSL https://is.gd/depend_ubuntu2204_armbian)
+          sudo -E apt-get -y install $(curl -fsSL https://tinyurl.com/ubuntu2204-build-armbian)
           sudo -E systemctl daemon-reload
           #sudo -E apt-get -y full-upgrade
           sudo -E apt-get -y autoremove --purge
