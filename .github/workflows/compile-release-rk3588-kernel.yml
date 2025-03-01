@@ -17,6 +17,7 @@ on:
         type: choice
         options:
           - unifreq/linux-5.10.y-rk35xx
+          - findyy99/linux-5.10.y-rk35xx
           - codesnas/linux-5.10.y-rk35xx
           - armbian/linux-rockchip@rk-6.1-rkr5
       kernel_version:
